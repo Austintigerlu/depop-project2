@@ -5,7 +5,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const controllers = require('./controllers');
 const db = require('./models');
-const products  = require('./controllers');
 const PORT = process.env.PORT
 
 // instance
@@ -26,8 +25,9 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 // CONTROLLERS
-// app.use('/products', controllers.products);
+app.use('/products', controllers.products);
 
+// Home Page
 app.get('/', async (req,res, next) => { 
     try { 
         const products = await db.Product.find({})

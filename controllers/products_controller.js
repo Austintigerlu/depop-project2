@@ -239,3 +239,5 @@ router.post('/', async (req, res, next) => {
 
 // -- DELETE ITEMS --
 router.delete('')
+
+module.exports = router
