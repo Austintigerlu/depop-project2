@@ -1,6 +1,8 @@
 // require
 const express = require('express');
 const methodOverride = require('method-override');
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const controllers = require('./controllers')
 const PORT = process.env.PORT
 // instance
