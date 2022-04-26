@@ -3,7 +3,9 @@ const express = require('express');
 const methodOverride = require('method-override');
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-const controllers = require('./controllers')
+const controllers = require('./controllers');
+const db = require('./models');
+const products  = require('./controllers');
 const PORT = process.env.PORT
 
 // instance
@@ -26,8 +28,17 @@ app.use(express.urlencoded({ extended: false }))
 // CONTROLLERS
 // app.use('/products', controllers.products);
 
-app.get('/', (req,res) => { 
-    res.render('index.ejs')
+app.get('/', async (req,res, next) => { 
+    try { 
+        const products = await db.Product.find({})
+        const context = {products}
+        console.log(products)
+        res.render('index.ejs', context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 })
 // Create Server
 app.listen(PORT)
