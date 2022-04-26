@@ -23,6 +23,6 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 // CONTROLLERS
-app.use('/products', controllers.products);
+// app.use('/products', controllers.products);
 // Create Server
 app.listen(PORT)
