@@ -9,7 +9,7 @@ const PORT = process.env.PORT
 const app = express();
 
 // db connection
-require('./config')
+require('./config/db.connection')
 
 // app configs
 app.set('view engine', 'ejs')
@@ -23,6 +23,6 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 // CONTROLLERS
-
+app.use('/products', controllers.products);
 // Create Server
 app.listen(PORT)
