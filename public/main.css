@@ -1,0 +1,7 @@
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.navbar .dropdown-menu {
+	transform: translateY(-5px);
+}
