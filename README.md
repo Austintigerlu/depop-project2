@@ -31,4 +31,8 @@ A clothing marketplace that features the industry standard shopping features. A 
 - Purchase w/ Credit Card
 - Transition of products via scroll
 - Saving the cart for use later.
+<<<<<<< HEAD
 - Search Query
+=======
+- Search Query
+>>>>>>> 7d18224b718b80d6bcdc3add702b3710a3e82cdc
