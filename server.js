@@ -5,6 +5,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const controllers = require('./controllers')
 const PORT = process.env.PORT
+
 // instance
 const app = express();
 
@@ -23,6 +24,10 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 
 // CONTROLLERS
-app.use('/products', controllers.products);
+// app.use('/products', controllers.products);
+
+app.get('/', (req,res) => { 
+    res.render('index.ejs')
+})
 // Create Server
 app.listen(PORT)
