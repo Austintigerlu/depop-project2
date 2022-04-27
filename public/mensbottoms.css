@@ -1,21 +1,8 @@
 body{
-	background-color: white;
+	background-color: bisque;
 }
 
-#pics{
-	display: inline;
-	align-items: center;
-	padding: 0px 10px;
-}
-
-#prices{
-	transform: translateY(-20px);
-	padding: 0px;
-	margin-top: 0px;
-	border-top: 0px;
-}
-
-#price1{
-	width: 220px;
-	padding: 0px;
+.display-pics{
+	height: 300px;
+	width: 300px;
 }
