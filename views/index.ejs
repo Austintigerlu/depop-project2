@@ -2,18 +2,25 @@
 <html lang="en">
     <%- include('partials/head.ejs') %>
 <body>
-    <div class="container"> 
-        <div class="col-md-4">
-            <h2>Brand Statement</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p><a href="http://localhost:4000/#" target="_blank" class="btn btn-success">Start Shopping &raquo;</a></p>
-            <img id="homeModel" src="https://images.pexels.com/photos/6627106/pexels-photo-6627106.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Man with a jacket">
-            <style>
-                #homeModel {
-                    max-height: 300px; 
-                	max-width: 300px;
-                }
-            </style>
+    <div class="container-fluid" id="index-header"> 
+        <div class="row align-items-center h-100">
+            <div class="col-sm-12 col-md-1 justify-content-end"></div>
+            <div class="col-sm-12 col-md-3 justify-content-end">
+                <h2>Brand Statement</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a href="http://localhost:4000/#" target="_blank" class="btn btn-success">Start Shopping &raquo;</a>
+            </div>
+            <div class = "col-sm-12 col-md-4 justify-content-end"></div>
+            <div class = "col-sm-12 col-md-2 justify-content-end">
+                <img id="homeModel" src="https://images.pexels.com/photos/6627106/pexels-photo-6627106.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Man with a jacket">
+            </div>
+            <div class = "col-sm-12 col-md-2 justify-content-end"></div>
+                <style>
+                    #homeModel {
+                        max-height: 600px; 
+                        max-width: 600px;
+                    }
+                </style>
         </div>
     </div>
         <!-- <div> -->
@@ -22,32 +29,17 @@
             <!-- <div class="homeModel"> <img src="https://images.pexels.com/photos/852860/pexels-photo-852860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"> </div> -->
         <!-- </div> -->
     <hr>
-        <div class="layout">
-            <div>
-                <img class="homeClothes" src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Clothes A">
-            </div>
-            <div >
-                <img class="homeClothes" src="https://images.pexels.com/photos/2112651/pexels-photo-2112651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Clothes B">
-            </div>
-            <div>
-                <img class="homeClothes" src="https://images.pexels.com/photos/4641825/pexels-photo-4641825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Clothes C">
-            </div> 
+        <div class="container-fluid">
+            <div class="row align-items-center h-100">
+                <div class = 'col-sm-12 col-md-4 justify-content-center'><img class="homeClothes" src="https://images.pexels.com/photos/5709661/pexels-photo-5709661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Clothes A">
+                </div>
+                <div class = 'col-sm-12 col-md-4 justify-content-center'><img class="homeClothes" src="https://images.pexels.com/photos/2112651/pexels-photo-2112651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Clothes B">
+                </div>
+                <div class = 'col-sm-12 col-md-4 justify-content-center'><img class="homeClothes" src="https://images.pexels.com/photos/4641825/pexels-photo-4641825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Clothes C">
+                </div> 
         </div>
-
-    <footer>
-        <div class="row">
-            <div class="col-md-6">
-                <p>Copyright &copy; 2021 Site name here</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <a href="#" class="text-dark">Terms of Use</a> 
-                <span class="text-muted mx-2">|</span> 
-                <a href="#" class="text-dark">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
-</div>
-    
+    </div>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>
 

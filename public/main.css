@@ -10,6 +10,15 @@
 	margin-top: 100px;
 }
 
+
+#index-header{
+	align-items: center;
+	background-color: antiquewhite;
+	position: relative;
+	display: block;
+	height: 600px;
+}
+
 .layout {
 	display: flex;
 	gap: 4px;
@@ -27,3 +36,10 @@
 	border-radius: 4px;
 	padding: 5px;
 }
+
+
+footer {
+	position:relative;
+	bottom:0;
+	width:100%;
+ }
