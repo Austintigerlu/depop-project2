@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <h1>All Items</h1>
+    <% for(let i=0; i<Product.length; i++) { %>
+    <div class="allProductPhotos"><img src="<%=Product[i].image%>"/></div>
+    <%}%>
+</body>
+</html>

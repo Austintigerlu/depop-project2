@@ -24,9 +24,20 @@ app.use(methodOverride('_method'))
 
 app.use(express.urlencoded({ extended: false }))
 
+app.use(
+    session({
+        store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI}),
+        secret: "super secret",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 24,
+        },
+    })
+);
 // CONTROLLERS
 app.use('/products', controllers.products);
-
+app.use('/login', controllers.users);
 // Home Page
 app.get('/', async (req,res, next) => { 
     try { 
