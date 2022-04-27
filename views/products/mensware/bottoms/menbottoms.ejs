@@ -7,27 +7,35 @@
         <a href = '/'>Home</a> > <a href = '/products/mensware'>Mensware</a> > Bottoms
     </div>
     <div class = 'container-fluid' id="pics">
-        <div class="row justify-content-center">
-            <div class = 'col-sm-12 col-lg-1'></div>
-            <div class = 'col-sm-12 col-lg-2'><img src = 'https://ae01.alicdn.com/kf/S7fd39f5bf11d48cdbe4d832b61b2891e3/Men-s-Business-2022-Casual-Trousers-Pants-Men-s-Fashion-Trend-Spring-and-Summer-New-Trousers.jpg_220x220xz.jpg_.webp' height="220" width="220"></div>
-            <div class = 'col-sm-12 col-lg-2'><img src = 'https://ae01.alicdn.com/kf/Sfc378b8bc0344a06abfe46332a03c3cbm/Men-s-Korean-Version-Pants-Male-New-Nine-point-Small-Trousers-Men-s-Slim-Drape-Suit.jpg_220x220xz.jpg_.webp' height="220" width="220"></div>
-            <div class = 'col-sm-12 col-lg-2'><img src = 'https://ae01.alicdn.com/kf/S2f58c96a9fec4061b1ef4c4e1adf103fr/Multi-pocket-Retro-Side-Zipper-Solid-Color-Drawstring-Casual-Cargo-Pants-Mens-High-Street-Wide-Leg.jpg_220x220xz.jpg_.webp' height="220" width="220"></div>
-            <div class = 'col-sm-12 col-lg-2'><img src = 'https://ae01.alicdn.com/kf/S4a128bfea6f7466c993940fe0d19d7382/Summer-Thin-High-Stretch-Cozy-Men-s-Classic-Pants-Casual-Pant-Men-Anti-wrinkle-Grey-Khaki.jpg_220x220xz.jpg_.webp' height="220" width="220"></div>
-            <div class = 'col-sm-12 col-lg-2'><img src = 'https://ae01.alicdn.com/kf/S55bc6cde825a468fa15a83741e5f116al/Cargo-Pants-Men-Skinny-Jeans-Trousers-Elastic-Waist-Drawstring-Grey-Men-Pants-Fashion-Streetwear-Flap-Pockets.jpg_220x220xz.jpg_.webp' height="220" width="220"></div>
-            <div class = 'col-sm-12 col-lg-1'></div>
-        </div>
-    </div>
-    <div class = 'container-fluid' id="prices">
-        <div class="row justify-content-md-start">
-            <div class = 'col-sm-12 col-lg-1'></div>
-            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
-            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
-            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
-            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
-            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
-            <div class = 'col-sm-12 col-lg-1'></div>
+        <div class="row justify-content-start flex-wrap">
+        <% for(let i = 0; i < Product.length; i++ ) { %>
+                <div class = 'col-sm-12 col-lg-2'><%= Product[i].name%><br />
+                    <img class = 'display-pics' src = '<%= Product[i].image %>'><br />
+                $<%= Product[i].price %></div>
+                <div class = 'col-sm-12 col-lg-1'></div>
+        <% } %>
         </div>
     </div>
     <%- include('../../../partials/footer.ejs') %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class = 'container-fluid' id="prices">
+        <div class="row justify-content-md-start">
+            <div class = 'col-sm-12 col-lg-1'></div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$20.99</div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
+            <div class = 'col-sm-12 col-lg-1'></div>
+        </div>
+    </div> -->

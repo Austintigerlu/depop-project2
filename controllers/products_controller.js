@@ -74,7 +74,10 @@ router.get('/mensware/tops/:id/edit/', async (req,res,next) => {
 // Category: Mensware Sub: Bottoms Page
 router.get('/mensware/bottoms/', async (req,res,next) => {
 	try {
-		const Product = await db.Product.find({})
+		const Product = await db.Product.find({
+			department: 'Mens',
+			category: 'Bottoms'
+		})
 		const context = { Product }
 		return res.render('./products/mensware/bottoms/menbottoms.ejs', context)
 	} catch (error) {
