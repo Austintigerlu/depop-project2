@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const db = require('../models')
 
 
@@ -16,14 +15,6 @@ router.get('/', async (req,res,next) => {
 		return next();
 	}
 })
-
-//  -- NEW WEBPAGES --  
-
-//New Clothing/Jewelry Page
-router.get('/new', (req,res) => {
-	res.render('insert_name_here')
-})
-
 
 //  -- DISPLAY PAGES -- 
 
@@ -83,9 +74,9 @@ router.get('/mensware/tops/:id/edit/', async (req,res,next) => {
 // Category: Mensware Sub: Bottoms Page
 router.get('/mensware/bottoms/', async (req,res,next) => {
 	try {
-		const insert_name_here = await db.insert_name_here.find({})
-		const context = { insert_name_here }
-		return res.render('insert_name_here', context)
+		const Product = await db.Product.find({})
+		const context = { Product }
+		return res.render('./products/mensware/bottoms/menbottoms.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
@@ -235,6 +226,13 @@ router.post('/', async (req, res, next) => {
 		req.error = error
 		return next();
 	}
+})
+
+//  -- NEW WEBPAGES --  
+
+//New Clothing/Jewelry Page
+router.get('/new', (req,res) => {
+	res.render('insert_name_here')
 })
 
 // -- DELETE ITEMS --
