@@ -9,7 +9,7 @@ router.get('/', async (req,res,next) => {
 	try {
 		const Product = await db.Product.find({})
 		const context = { Product }
-		return res.render('insert_name_here', context)
+		return res.render('products/index.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
