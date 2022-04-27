@@ -5,3 +5,8 @@
 .navbar .dropdown-menu {
 	transform: translateY(-5px);
 }
+
+.homeImages {
+    max-height:25%;
+    max-width: 25%;
+}
