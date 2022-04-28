@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../../../partials/head.ejs') %>
+<body>
+    <center><h1>Women's Bottoms</h1></center>
+    <div class = 'directory-path'>
+        <a href = '/'>Home</a> > <a href = '/products/womensware'>Womensware</a> > Bottoms
+    </div>
+    <div class = 'container-fluid' id="pics">
+        <div class="row justify-content-start flex-wrap">
+        <% for(let i = 0; i < Product.length; i++ ) { %>
+                <div class = 'col-sm-12 col-lg-2'><%= Product[i].name%><br />
+                    <a href="/products/mensware/bottoms/<%=Product[i]._id%>"><img class = 'display-pics' src = '<%= Product[i].image %>'></a><br />
+                $<%= Product[i].price %></div>
+                <div class = 'col-sm-12 col-lg-1'></div>
+        <% } %>
+        </div>
+    </div>
+    <%- include('../../../partials/footer.ejs') %>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class = 'container-fluid' id="prices">
+        <div class="row justify-content-md-start">
+            <div class = 'col-sm-12 col-lg-1'></div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$20.99</div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
+            <div class = 'col-sm-12 col-lg-2' id="price1">$16.99</div>
+            <div class = 'col-sm-12 col-lg-1'></div>
+        </div>
+    </div> -->
