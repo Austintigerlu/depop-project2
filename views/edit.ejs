@@ -4,7 +4,7 @@
 	<script src="/scripts/dommanip.js" defer></script>
 <body>
 	<h1>Edit Page | <%= Product.name %></h1>
-	<form method="POST" action="/products/mensware/<%= Product._id%>?_method=PUT">
+	<form method="POST" action="/products/<%= Product._id%>?_method=PUT">
 		<div class = container-fluid>
 			<div class = 'row'>
 				<div class = 'col-sm-12 col-md-12'>
