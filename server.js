@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const controllers = require('./controllers');
+const navLinks = require('./navLinks')
 const db = require('./models');
 const PORT = process.env.PORT
 
@@ -22,7 +23,8 @@ app.use(express.static('public'))
 // adding delete and update requests
 app.use(methodOverride('_method'))
 
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
+
 
 app.use(
     session({
@@ -35,6 +37,15 @@ app.use(
         },
     })
 );
+
+app.use(function (req, res, next) {
+    res.locals.user = req.session.currentUser;
+    console.log(res.locals)
+    next();
+})
+
+app.use(navLinks);
+
 // app.use((req,res) => {console.log(JSON.stringify(req.session))})
 // CONTROLLERS
 app.use('/products', controllers.products);
