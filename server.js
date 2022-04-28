@@ -4,7 +4,6 @@ const methodOverride = require('method-override');
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const controllers = require('./controllers');
-const navLinks = require('./navLinks')
 const db = require('./models');
 const PORT = process.env.PORT
 
@@ -44,7 +43,6 @@ app.use(function (req, res, next) {
     next();
 })
 
-app.use(navLinks);
 
 // app.use((req,res) => {console.log(JSON.stringify(req.session))})
 // CONTROLLERS
