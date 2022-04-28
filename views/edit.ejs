@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%- include('partials/head.ejs') %>
-	<script src="public/dommanip.js" async defer></script>
+	<script src="/scripts/dommanip.js" defer></script>
 <body>
 	<h1>Edit Page | <%= Product.name %></h1>
 	<form method="POST" action="/products/<%= Product._id%>?_method=PUT">
@@ -13,17 +13,17 @@
 				<div class = 'col-sm-12 col-md-12'>
 					<img class="edit-image" src = '<%= Product.image%>'><br />
 					<input type="file" accept="image/*" name="image" value="<%= Product.image%>"/>OR<br />
-					<input type="url" name="image" value="<%=Product.image%>"/>
+					<input class = 'url' type="url" name="image" value="<%=Product.image%>"/>
 					<button class = 'preview'>Preview Image</button>
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Size:</label>
 					<select name="size" value="<%= Product.size%>">
 						<option value ="XS">XS</option>
-						<option value ="XS">S</option>
-						<option value ="XS">M</option>
-						<option value ="XS">L</option>
-						<option value ="XS">XL</option>
+						<option value ="S">S</option>
+						<option value ="M">M</option>
+						<option value ="L">L</option>
+						<option value ="XL">XL</option>
 					</select>
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
