@@ -11,7 +11,7 @@ const loginRoutes = [
 ];
 
 
-let navLinks = function nav(req,res,next) {
+let navLinks = function navLinks(req,res,next) {
     if (req.session.currentUser){
         res.locals.routes = authRoutes;
     } else {

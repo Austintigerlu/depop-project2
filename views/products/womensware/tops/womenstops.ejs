@@ -10,7 +10,7 @@
         <div class="row justify-content-start flex-wrap">
         <% for(let i = 0; i < Product.length; i++ ) { %>
                 <div class = 'col-sm-12 col-lg-2'><%= Product[i].name%><br />
-                    <img class = 'display-pics' src = '<%= Product[i].image %>'><br />
+                    <a href="/products/womensware/tops/<%=Product[i]._id%>"><img class = 'display-pics' src = '<%= Product[i].image %>'></a><br />
                 $<%= Product[i].price %></div>
                 <div class = 'col-sm-12 col-lg-1'></div>
         <% } %>
