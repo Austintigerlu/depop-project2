@@ -39,6 +39,7 @@ app.use(
 // CONTROLLERS
 app.use('/products', controllers.products);
 app.use('/login', controllers.users);
+
 // Home Page
 app.get('/', async (req,res, next) => { 
     try { 
