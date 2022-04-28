@@ -34,9 +34,12 @@ router.get('/mensware/', async (req,res,next) => {
 // Category: Mensware Sub: Tops Page
 router.get('/mensware/tops/', async (req,res,next) => {
 	try {
-		const Product = await db.Product.find({})
+		const Product = await db.Product.find({
+			department: 'Mens',
+			category: 'Tops'
+		})
 		const context = { Product }
-		return res.render('insert_name_here', context)
+		return res.render('./products/mensware/tops/menstops.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
@@ -90,8 +93,11 @@ router.get('/mensware/bottoms/', async (req,res,next) => {
 // Category: Mensware Sub: Bottoms/ID Page
 router.get('/mensware/bottoms/:id/', async (req,res,next) => {
 	try {
-		const insert_name_here = await db.insert_name_here.findById(req.params.id)
-		const context = { insert_name_here: insert_name_here }
+		const Product = await db.Product.findById(req.params.id)
+		const context = { 
+			Product: Product,
+			idx: req.params.id
+		}
 		return res.render('insert_name_here', context)
 	} catch (error) {
 		console.log(error)
