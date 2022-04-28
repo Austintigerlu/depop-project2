@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('partials/head.ejs') %>
+	<script src="public/dommanip.js" async defer></script>
+<body>
+	<h1>Edit Page | <%= Product.name %></h1>
+	<form method="POST" action="/products/<%= Product._id%>?_method=PUT">
+		<div class = container-fluid>
+			<div class = 'row'>
+				<div class = 'col-sm-12 col-md-12'>
+					<label>Name:</label>  <input type="text" name="name" value="<%= Product.name%>"/>
+				</div>
+				<div class = 'col-sm-12 col-md-12'>
+					<img class="edit-image" src = '<%= Product.image%>'><br />
+					<input type="file" accept="image/*" name="image" value="<%= Product.image%>"/>OR<br />
+					<input type="url" name="image" value="<%=Product.image%>"/>
+					<button class = 'preview'>Preview Image</button>
+				</div>
+				<div class = 'col-sm-12 col-md-12'>
+					<label>Size:</label>
+					<select name="size" value="<%= Product.size%>">
+						<option value ="XS">XS</option>
+						<option value ="XS">S</option>
+						<option value ="XS">M</option>
+						<option value ="XS">L</option>
+						<option value ="XS">XL</option>
+					</select>
+				</div>
+				<div class = 'col-sm-12 col-md-12'>
+					<label>Price: $</label>
+					<input type="number" name="price" min="0" value="<%= Product.price%>"></input>
+				</div>
+				<div class = 'col-sm-12 col-md-12'>
+					<label>Condition:</label>
+					<select name="size" value="<%= Product.condition%>">
+						<option value ="New">New</option>
+						<option value ="Used">Used</option>
+					</select>
+				</div>
+				<div class = 'col-sm-12 col-md-12'>
+					<label>Description:</label><br />
+					<textarea name="description" rows="4" cols="50"><%= Product.description%>
+					</textarea>
+				</div>
+				<div class = 'col-sm-12 col-md-12'>
+					<label>Department:</label>
+					<select name="department" value="<%= Product.department%>">
+						<option value ="Tops">Tops</option>
+						<option value ="Bottoms">Bottoms</option>
+					</select>
+				</div>
+				<div class = 'col-sm-12 col-md-12'>
+					<label>Category:</label>
+					<select name="size" value="<%= Product.category%>">
+						<option value ="Mens">Mens</option>
+						<option value ="Womens">Womens</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+	<%- include('partials/footer.ejs') %>
+</html>

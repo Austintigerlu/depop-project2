@@ -107,11 +107,13 @@ router.get('/mensware/bottoms/:id/', async (req,res,next) => {
 })
 
 // Category: Mensware Sub: Bottoms/ID/EDIT Page
-router.get('/mensware/bottoms/:id/edit/', async (req,res,next) => {
+router.get('/:id/edit/', async (req,res,next) => {
 	try {
-		const insert_name_here = await db.insert_name_here.findById(req.params.id)
-		const context = { insert_name_here: insert_name_here }
-		return res.render('insert_name_here', context)
+		const Product = await db.Product.findById(req.params.id)
+		const context = { 
+			Product: Product,
+		}
+		return res.render('edit.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
