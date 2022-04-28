@@ -15,9 +15,20 @@
                         <h1><%=Product.name%></h1>
                     </div>
                 </div>
-                <!-- product info -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="label label-primary"><%=Product.condition%></span>
+                        <span class="monospaced">No. <%=Product._id%></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="description"><%=Product.description%></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <%- include('../../../partials/footer.ejs') %>
 </body>
 </html>
