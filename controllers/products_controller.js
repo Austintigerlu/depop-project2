@@ -21,9 +21,9 @@ router.get('/', async (req,res,next) => {
 // Category: Mensware Page
 router.get('/mensware/', async (req,res,next) => {
 	try {
-		const Product = await db.Product.find({})
+		const Product = await db.Product.find({department: 'Mens'})
 		const context = { Product }
-		return res.render('insert_name_here', context)
+		return res.render('./products/mensware/mensware.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
