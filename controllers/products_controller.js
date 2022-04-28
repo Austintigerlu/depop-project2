@@ -121,6 +121,18 @@ router.get('/:id/edit/', async (req,res,next) => {
 	}
 })
 
+router.put('/mensware/:id', async (req, res, next)=>{
+    try {
+        const Product = await db.Product.findByIdAndUpdate(req.params.id, req.body);
+        console.log(Product);
+        return res.redirect(`/products`)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 
 // Category: Womensware Page
 router.get('/womensware', async (req,res,next) => {

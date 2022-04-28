@@ -3,7 +3,7 @@
 	<%- include('partials/head.ejs') %>
 	<script src="/scripts/dommanip.js" defer></script>
 <body>
-	<h1>Edit Page | <%= Product.name %></h1>
+	<h1>New Page | <%= Product.name %></h1>
 	<form method="POST" action="/products/mensware/<%= Product._id%>?_method=PUT">
 		<div class = container-fluid>
 			<div class = 'row'>
@@ -17,7 +17,7 @@
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Size:</label>
-					<select name="size" id="size">
+					<select name="size" value="<%= Product.size%>">
 						<option value ="XS">XS</option>
 						<option value ="S">S</option>
 						<option value ="M">M</option>
@@ -31,7 +31,7 @@
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Condition:</label>
-					<select name="condition" id="condition">
+					<select name="size" value="<%= Product.condition%>">
 						<option value ="New">New</option>
 						<option value ="Used">Used</option>
 					</select>
@@ -43,14 +43,14 @@
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Department:</label>
-					<select name="department" id="department">
+					<select name="department" value="<%= Product.department%>">
 						<option value ="Tops">Tops</option>
 						<option value ="Bottoms">Bottoms</option>
 					</select>
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Category:</label>
-					<select name="category" id="category">
+					<select name="size" value="<%= Product.category%>">
 						<option value ="Mens">Mens</option>
 						<option value ="Womens">Womens</option>
 					</select>
