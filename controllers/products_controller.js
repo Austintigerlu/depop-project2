@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Index/Home Page
 router.get('/', async (req,res,next) => {
@@ -52,8 +54,11 @@ router.get('/mensware/tops/', async (req,res,next) => {
 router.get('/mensware/tops/:id/', async (req,res,next) => {
 	try {
 		const Product = await db.Product.findById(req.params.id)
-		const context = { Product: Product }
-		return res.render('insert_name_here', context)
+		const context = { 
+			Product: Product,
+			idx: req.params.id
+		}
+		return res.render('./products/mensware/tops/menstopsshow.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
@@ -107,13 +112,11 @@ router.get('/mensware/bottoms/:id/', async (req,res,next) => {
 })
 
 // Category: Mensware Sub: Bottoms/ID/EDIT Page
-router.get('/:id/edit/', async (req,res,next) => {
+router.get('/mensware/bottoms/:id/edit/', async (req,res,next) => {
 	try {
-		const Product = await db.Product.findById(req.params.id)
-		const context = { 
-			Product: Product,
-		}
-		return res.render('edit.ejs', context)
+		const insert_name_here = await db.insert_name_here.findById(req.params.id)
+		const context = { insert_name_here: insert_name_here }
+		return res.render('insert_name_here', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
@@ -132,7 +135,6 @@ router.put('/mensware/:id', async (req, res, next)=>{
         return next();
     }
 })
-
 
 // Category: Womensware Page
 router.get('/womensware', async (req,res,next) => {
@@ -166,9 +168,12 @@ router.get('/womensware/tops', async (req,res,next) => {
 // Category: Womensware Sub: Tops/ID Page
 router.get('/womensware/tops/:id/', async (req,res,next) => {
 	try {
-		const insert_name_here = await db.insert_name_here.findById(req.params.id)
-		const context = { insert_name_here: insert_name_here }
-		return res.render('insert_name_here', context)
+		const Product = await db.Product.findById(req.params.id)
+		const context = { 
+				Product: Product,
+				idx: req.params.id
+			}
+		return res.render('./products/womensware/tops/womenstopsshow.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
@@ -208,9 +213,12 @@ router.get('/womensware/bottoms', async (req,res,next) => {
 // Category: Womensware Sub: Bottoms/ID Page
 router.get('/womensware/bottoms/:id/', async (req,res,next) => {
 	try {
-		const insert_name_here = await db.insert_name_here.findById(req.params.id)
-		const context = { insert_name_here: insert_name_here }
-		return res.render('insert_name_here', context)
+		const Product = await db.Product.findById(req.params.id)
+		const context = { 
+				Product: Product,
+				idx: req.params.id
+			}
+		return res.render('./products/womensware/bottoms/womenbottomsshow.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
