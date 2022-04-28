@@ -39,10 +39,9 @@ app.use(
 
 app.use(function (req, res, next) {
     res.locals.user = req.session.currentUser;
-    console.log(res.locals)
+    console.log(res.locals);
     next();
 })
-
 
 // app.use((req,res) => {console.log(JSON.stringify(req.session))})
 // CONTROLLERS
