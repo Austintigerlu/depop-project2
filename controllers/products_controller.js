@@ -41,6 +41,7 @@ router.post('/', async (req, res, next) => {
 //  -- DISPLAY PAGES -- 
 // User Items
 router.get('/useritems'), async (req,res) => {
+	console.log("user")
 	try{
 		const Product = await db.Product.find({
 			user: user._id,
