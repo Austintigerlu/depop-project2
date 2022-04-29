@@ -3,6 +3,7 @@
 	<%- include('partials/head.ejs') %>
 	<script src="/scripts/dommanip.js" defer></script>
 <body>
+	<%- include('partials/nav.ejs') %>
 	<h1>Edit Page | <%= Product.name %></h1>
 	<form method="POST" action="/products/<%= Product._id%>?_method=PUT">
 		<div class = container-fluid>
