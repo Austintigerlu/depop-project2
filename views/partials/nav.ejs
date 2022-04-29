@@ -1,0 +1,44 @@
+<header>
+    <% if (user) { %>
+        <div class = 'container-fluid'>
+            <nav class = 'nav justify-content-center bg-light text-dark'>
+                <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = 'https://cdn-icons-png.flaticon.com/512/7216/7216150.png' height='30' width='30'></a></div>
+                <div class = 'col-md-3'><a href = '#' class = 'nav-item nav-link disabled' id='Title-top-nav'>Marketplace for Clothes</a></div>
+                <div class = 'col-md-1'><a href = '/' class = 'nav-item nav-link active' id='home-top-nav'><%=user.username%></a></div>
+                <div class = 'col-md-1'><a href = '/login/logout' class = 'nav-item nav-link active' id='login-top-nav'>Logout</a></div>
+                <div class = 'col-md-1'><a href = '/products/new' class = 'nav-item nav-link active' id='signup-top-nav'>New</a></div>
+                <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = 'https://cdn-icons.flaticon.com/png/512/2832/premium/2832495.png?token=exp=1651007708~hmac=9944edfc2c5ef400e64478dbe61fcb49' height='30' width='30' title='My Bag'></a></div>
+            </nav>
+        </div>
+    <%}%>
+    <% if (!user) {%>
+    <div class = 'container-fluid'>
+        <nav class = 'nav justify-content-center bg-light text-dark'>
+            <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = 'https://cdn-icons-png.flaticon.com/512/7216/7216150.png' height='30' width='30'></a></div>
+            <div class = 'col-md-3'><a href = '#' class = 'nav-item nav-link disabled' id='Title-top-nav'>Marketplace for Clothes</a></div>
+            <div class = 'col-md-1'><a href = '/' class = 'nav-item nav-link active' id='home-top-nav'>Home</a></div>
+            <div class = 'col-md-1'><a href = '/login' class = 'nav-item nav-link active' id='login-top-nav'>Login</a></div>
+            <div class = 'col-md-1'><a href = '/login/register' class = 'nav-item nav-link active' id='signup-top-nav'>Register</a></div>
+            <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = 'https://cdn-icons.flaticon.com/png/512/2832/premium/2832495.png?token=exp=1651007708~hmac=9944edfc2c5ef400e64478dbe61fcb49' height='30' width='30' title='My Bag'></a></div>
+        </nav>
+    </div>
+    <%}%>
+    <div class = 'container-fluid'>
+        <nav class = 'navbar box justify-content-start'>
+            <div class="dropdown col-sm-12 col-md-1">
+                <button class="btn btn-default" type="button" data-toggle="dropdown" data-hover ="dropdown">Mensware</a></button>
+                <div class="dropdown-menu">
+                    <a href="/products/mensware/tops/" class="dropdown-item">Tops</a>
+                    <a href="/products/mensware/bottoms/" class="dropdown-item">Bottoms</a>
+                </div>
+            </div>
+            <div class="dropdown col-sm-12 col-md-1">
+                <button class="btn btn-default" type="button" data-toggle="dropdown" data-hover ="dropdown">Womensware</a></button>
+                    <div class="dropdown-menu">
+                        <a href="/products/womensware/tops/" class="dropdown-item">Tops</a>
+                        <a href="/products/womensware/bottoms/" class="dropdown-item">Bottoms</a>
+                    </div>
+            </div>
+        </nav>
+    </div>
+</header>

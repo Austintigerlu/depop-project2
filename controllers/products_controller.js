@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../models')
 
 
-// Products Page
+// Products Home Page
 router.get('/', async (req,res,next) => {
 	try {
 		const Product = await db.Product.find({})
@@ -39,6 +39,21 @@ router.post('/', async (req, res, next) => {
 })
 
 //  -- DISPLAY PAGES -- 
+// Product Show Route
+router.get('/:id/', async (req,res,next) => {
+	try {
+		const Product = await db.Product.findById(req.params.id)
+		const context = { 
+				Product: Product,
+				idx: req.params.id
+			}
+		return res.render('./products/show.ejs', context)
+	} catch (error) {
+		console.log(error)
+		req.error = error;
+		return next();
+	}
+})
 
 // Category: Mensware Page
 router.get('/mensware/', async (req,res,next) => {
@@ -69,23 +84,6 @@ router.get('/mensware/tops/', async (req,res,next) => {
 	}
 })
 
-
-// Category: Mensware Sub: Tops/ID Page
-router.get('/mensware/tops/:id/', async (req,res,next) => {
-	try {
-		const Product = await db.Product.findById(req.params.id)
-		const context = { 
-			Product: Product,
-			idx: req.params.id
-		}
-		return res.render('./products/mensware/tops/menstopsshow.ejs', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
-
 // Category: Mensware Sub: Bottoms Page
 router.get('/mensware/bottoms/', async (req,res,next) => {
 	try {
@@ -102,23 +100,7 @@ router.get('/mensware/bottoms/', async (req,res,next) => {
 	}
 })
 
-// Category: Mensware Sub: Bottoms/ID Page
-router.get('/mensware/bottoms/:id/', async (req,res,next) => {
-	try {
-		const Product = await db.Product.findById(req.params.id)
-		const context = { 
-			Product: Product,
-			idx: req.params.id
-		}
-		return res.render('./products/mensware/bottoms/menbottomsshow.ejs', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
-
-// Category: Mensware Sub: Bottoms/ID/EDIT Page
+// EDIT Page
 router.get('/:id/edit/', async (req,res,next) => {
 	try {
 		const Product = await db.Product.findById(req.params.id)
@@ -173,22 +155,6 @@ router.get('/womensware/tops', async (req,res,next) => {
 	}
 })
 
-// Category: Womensware Sub: Tops/ID Page
-router.get('/womensware/tops/:id/', async (req,res,next) => {
-	try {
-		const Product = await db.Product.findById(req.params.id)
-		const context = { 
-				Product: Product,
-				idx: req.params.id
-			}
-		return res.render('./products/womensware/tops/womenstopsshow.ejs', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
-
 // Category: Womensware Sub: Bottoms Page
 router.get('/womensware/bottoms', async (req,res,next) => {
 	try {
@@ -205,24 +171,6 @@ router.get('/womensware/bottoms', async (req,res,next) => {
 		return next();
 	}
 })
-
-// Category: Womensware Sub: Bottoms/ID Page
-router.get('/womensware/bottoms/:id/', async (req,res,next) => {
-	try {
-		const Product = await db.Product.findById(req.params.id)
-		const context = { 
-				Product: Product,
-				idx: req.params.id
-			}
-		return res.render('./products/womensware/bottoms/womenbottomsshow.ejs', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
-
-
 
 // router.get('/jewelry', async (req,res,next) => {
 // 	try {
