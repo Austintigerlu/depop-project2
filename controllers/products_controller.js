@@ -37,21 +37,20 @@ router.post('/', async (req, res, next) => {
 
 //  -- DISPLAY PAGES -- 
 // User Items
-router.get('/useritems'), async (req,res) => {
-	console.log("user")
+router.get('/items/:userid', async (req, res, next) => {
+	userid = req.params.userid
 	try{
 		const Product = await db.Product.find({
-			user: user._id,
+			user: userid,
 		})
-		const context = {Product}
-		console.log(context)
-		return res.render('/products/index.ejs')
+		const context = { Product }
+		return res.render('./products/useritems.ejs', context)
 	} catch (error) {
 		console.log(error)
 		req.error = error;
 		return next();
 	}
-}
+})
 
 // Product Show Route
 router.get('/:id/', async (req,res,next) => {
