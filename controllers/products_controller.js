@@ -29,7 +29,7 @@ router.post('/', async (req, res, next) => {
     try {
 		let create = req.body
         const createdProduct = await db.Product.create(create);
-		// const userProduct = await db.User.create(create)
+		createdProduct._id
         res.redirect('/');
     } catch (error) {
         console.log(error);
@@ -39,6 +39,22 @@ router.post('/', async (req, res, next) => {
 })
 
 //  -- DISPLAY PAGES -- 
+// User Items
+router.get('/useritems'), async (req,res) => {
+	try{
+		const Product = await db.Product.find({
+			user: user._id,
+		})
+		const context = {Product}
+		console.log(context)
+		return res.render('/products/index.ejs')
+	} catch (error) {
+		console.log(error)
+		req.error = error;
+		return next();
+	}
+}
+
 // Product Show Route
 router.get('/:id/', async (req,res,next) => {
 	try {

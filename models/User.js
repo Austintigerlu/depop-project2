@@ -15,14 +15,6 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    cart: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Product'
-    },
-    forSale: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Product'
-    }
 },
     {
         timestamps: true
