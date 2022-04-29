@@ -4,6 +4,11 @@ const db = require('../models')
 
 
 // index route
+router.get('/', (req,res) => {
+    res.render('cart/index')
+});
+
+
 // router.get('/', async (req,res,next) => {
 // 	try {
 // 		const Cart = await db.Cart.find({
@@ -17,10 +22,6 @@ const db = require('../models')
 // 		return next();
 // 	}
 // })
-
-router.get('/', (req,res) => {
-    res.render('cart/index')
-});
 
 
 // router.get("/", (req, res) => {
