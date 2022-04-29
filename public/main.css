@@ -1,3 +1,12 @@
+body{
+	background-color: bisque;
+}
+
+.display-pics{
+	height: 300px;
+	width: 300px;
+}
+
 .dropdown:hover .dropdown-menu {
 	display: block;
 }

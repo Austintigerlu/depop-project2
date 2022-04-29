@@ -15,9 +15,7 @@ router.get('/', async (req,res,next) => {
 		req.error = error;
 		return next();
 	}
-})
-
-//  -- NEW WEBPAGES --  
+}) 
 
 //New Clothing/Jewelry Page
 router.get('/new', (req,res) => {
@@ -99,32 +97,6 @@ router.get('/mensware/bottoms/', async (req,res,next) => {
 	}
 })
 
-// EDIT Page
-router.get('/:id/edit/', async (req,res,next) => {
-	try {
-		const Product = await db.Product.findById(req.params.id)
-		const context = { Product: Product }
-		return res.render('edit', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
-
-router.put('/:id', async (req, res, next)=>{
-    try {
-        const Product = await db.Product.findByIdAndUpdate(req.params.id, req.body);
-        return res.redirect(`/products`)
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-})
-
-
-
 // Category: Womensware Page
 router.get('/womensware', async (req,res,next) => {
 	try {
@@ -183,7 +155,29 @@ router.get('/womensware/bottoms', async (req,res,next) => {
 // 	}
 // })
 
+// EDIT Page
+router.get('/:id/edit/', async (req,res,next) => {
+	try {
+		const Product = await db.Product.findById(req.params.id)
+		const context = { Product: Product }
+		return res.render('edit', context)
+	} catch (error) {
+		console.log(error)
+		req.error = error;
+		return next();
+	}
+})
 
+router.put('/:id', async (req, res, next)=>{
+    try {
+        const Product = await db.Product.findByIdAndUpdate(req.params.id, req.body);
+        return res.redirect(`/products`)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 // -- DELETE ITEMS -
 	router.delete('/:id', async (req,res, next) => {
 		try{
