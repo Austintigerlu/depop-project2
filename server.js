@@ -47,6 +47,7 @@ app.use(function (req, res, next) {
 // CONTROLLERS
 app.use('/products', controllers.products);
 app.use('/login', controllers.users);
+app.use('/cart', controllers.cart);
 
 // Home Page
 app.get('/', async (req,res, next) => { 

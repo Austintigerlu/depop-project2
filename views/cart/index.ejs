@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head.ejs') %>
+  <%- include('../partials/head.ejs') %>
 <body>
-  <section class="layout2">
-    <div class="header">1</div>
-    <div class="leftSide">2</div>
-    <div class="body">
-      <div class ="emptyCart">
-        <h2>Empty Cart</h2>
-      </div>
+  <div class="cartContainer">
+    <div class=”header”>
+        <h2 class=”heading”>Shopping Cart</h2>
+        <h5 class=”action”>Remove all</h5>
     </div>
-    <div class="rightSide">Total</div>
-      <div class ="cartTotal">
-        <h2>Total</h2>
+    <div class=”Cart-Items”>
+      <div class=”image-box”>
+          <img src=”_________” >
       </div>
-    <div class="footer">5</div>
-  </section>
+      <div class=”about”>
+          <h2 class=”title”>Item Name</h2>
+          <img src=”___________”>
+      </div>
+      </div>
+      <div class=”counter”></div>
+      <div class=”prices”></div>
+      </div>
+  </div>
 </body>
-<%- include('partials/footer.ejs') %>
+
+
 </html>
