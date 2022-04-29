@@ -21,7 +21,6 @@ router.get('/', async (req,res,next) => {
 
 //New Clothing/Jewelry Page
 router.get('/new', (req,res) => {
-
 	res.render('./new.ejs')
 })
 

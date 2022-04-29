@@ -22,7 +22,8 @@
 .layout {
 	display: flex;
 	gap: 4px;
-  }
+}
+
 
 .homeClothes{
 	max-height: 80%; 
