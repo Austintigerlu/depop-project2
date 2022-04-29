@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Products Page
 router.get('/', async (req,res,next) => {
@@ -28,12 +26,10 @@ router.get('/new', (req,res) => {
 })
 
 router.post('/', async (req, res, next) => {
-	console.log(req.body)
     try {
-        // console.log(`The req.body is ${req.body}`)
 		let create = req.body
         const createdProduct = await db.Product.create(create);
-        console.log(`The created product is ${createdProduct}`)
+		// const userProduct = await db.User.create(create)
         res.redirect('/');
     } catch (error) {
         console.log(error);
