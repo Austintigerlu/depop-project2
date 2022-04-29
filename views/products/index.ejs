@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <%- include('../partials/head.ejs') %>
-
 <body>
     <%- include('../partials/nav.ejs') %>
-    <h1>All Items</h1>
-    <% for(let i=0; i<Product.length; i++) { %>
-        <div class="name"><%= Product[i].name %></div> 
-        <div class="allProductPhotos"><img src="<%=Product[i].image%>"/></div>
-        <div class="stats">Size: <%= Product[i].size %><br />
-            Price: <%= Product[i].price %><br />
-            Condition: <%= Product[i].condition %><br />
-            Description: <%= Product[i].description %><br />
-            Department: <%= Product[i].department %><br />
-            Category: <%= Product[i].category %>
+    <center><h1>All Products</h1></center>
+    <div class = 'directory-path'>
+        <a href = '/'>Home</a>
+    </div>
+    <div class = 'container-fluid' id="pics">
+        <div class="row justify-content-start flex-wrap">
+        <% for(let i = 0; i < Product.length; i++ ) { %>
+                <div class = 'col-sm-12 col-lg-2'><%= Product[i].name%><br />
+                    <a href="/products/<%=Product[i]._id%>"><img class = 'display-pics' src = '<%= Product[i].image %>'><br />
+                    $<%= Product[i].price %>
+                    </a>
+                </div>
+                <div class = 'col-sm-12 col-lg-1'></div>
+        <% } %>
         </div>
-    <%}%>
+    </div>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
