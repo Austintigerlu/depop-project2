@@ -237,7 +237,16 @@ router.get('/womensware/bottoms/:id/', async (req,res,next) => {
 // })
 
 
-// -- DELETE ITEMS --
-router.delete('')
+// -- DELETE ITEMS -
+	router.delete('/:id', async (req,res, next) => {
+		try{
+			const deleteProduct = await db.Product.findByIdAndDelete(req.params.id)
+			res.redirect('/products')
+		} catch (error) {
+			console.log(error);
+			req.error = error;
+			return next();
+		}
+	})
 
 module.exports = router

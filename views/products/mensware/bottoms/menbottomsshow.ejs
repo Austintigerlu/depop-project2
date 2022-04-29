@@ -26,11 +26,18 @@
                         <p class="description"><%=Product.description%></p>
                     </div>
                 </div>
+                <% if (user) {%>
                 <div class="row">
                     <div class="col-md-12">
                         <button><a href="/products/<%=Product._id%>/edit">Edit</a></button>
                     </div>
+                    <div class="col-md-12">
+                        <form action="/products/<%=Product._id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete Item" />
+                        </form>
+                    </div>
                 </div>
+                <%}%>
             </div>
         </div>
     </div>
