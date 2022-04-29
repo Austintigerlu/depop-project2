@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Products Page
 router.get('/', async (req,res,next) => {
@@ -17,6 +15,27 @@ router.get('/', async (req,res,next) => {
 		req.error = error;
 		return next();
 	}
+})
+
+//  -- NEW WEBPAGES --  
+
+//New Clothing/Jewelry Page
+router.get('/new', (req,res) => {
+
+	res.render('./new.ejs')
+})
+
+router.post('/', async (req, res, next) => {
+    try {
+		let create = req.body
+        const createdProduct = await db.Product.create(create);
+		// const userProduct = await db.User.create(create)
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 })
 
 //  -- DISPLAY PAGES -- 
@@ -66,7 +85,6 @@ router.get('/mensware/tops/:id/', async (req,res,next) => {
 		return next();
 	}
 })
-
 
 // Category: Mensware Sub: Bottoms Page
 router.get('/mensware/bottoms/', async (req,res,next) => {
@@ -171,19 +189,6 @@ router.get('/womensware/tops/:id/', async (req,res,next) => {
 	}
 })
 
-// Category: Womensware Sub: Tops/ID/EDIT Page
-router.get('/womensware/tops/:id/edit', async (req,res,next) => {
-	try {
-		const insert_name_here = await db.insert_name_here.findById(req.params.id)
-		const context = { insert_name_here: insert_name_here }
-		return res.render('insert_name_here', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
-
 // Category: Womensware Sub: Bottoms Page
 router.get('/womensware/bottoms', async (req,res,next) => {
 	try {
@@ -217,19 +222,6 @@ router.get('/womensware/bottoms/:id/', async (req,res,next) => {
 	}
 })
 
-// Category: Womensware Sub: Bottoms/ID/EDIT Page
-router.get('/womensware/bottoms/:id/edit/', async (req,res,next) => {
-	try {
-		const insert_name_here = await db.insert_name_here.findById(req.params.id)
-		const context = { insert_name_here: insert_name_here }
-		return res.render('insert_name_here', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
-
 
 
 // router.get('/jewelry', async (req,res,next) => {
@@ -244,24 +236,6 @@ router.get('/womensware/bottoms/:id/edit/', async (req,res,next) => {
 // 	}
 // })
 
-// -- POST NEW ITEM -- 
-router.post('/', async (req, res, next) => {
-	try{
-		const insert_name_here = await db.insert_name_here.create(req.body)
-		res.redirect('/')
-	} catch (error) {
-		console.log(error)
-		req.error = error
-		return next();
-	}
-})
-
-//  -- NEW WEBPAGES --  
-
-//New Clothing/Jewelry Page
-router.get('/new', (req,res) => {
-	res.render('insert_name_here')
-})
 
 // -- DELETE ITEMS --
 router.delete('')

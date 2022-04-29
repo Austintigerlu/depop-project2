@@ -3,21 +3,20 @@
 	<%- include('partials/head.ejs') %>
 	<script src="/scripts/dommanip.js" defer></script>
 <body>
-	<h1>New Page | <%= Product.name %></h1>
-	<form method="POST" action="/products/mensware/<%= Product._id%>?_method=PUT">
+	<h1>New Product</h1>
+	<form method="POST" action="/products" id="newProduct">
 		<div class = container-fluid>
 			<div class = 'row'>
 				<div class = 'col-sm-12 col-md-12'>
-					<label>Name:</label>  <input type="text" name="name" value="<%= Product.name%>"/>
+					<label>Name:</label>  <input type="text" name="name" />
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
-					<img class="edit-image" src = '<%= Product.image%>'><br />
-					<input class = 'url' type="url" name="image" value="<%=Product.image%>"/>
-					<a class = 'preview' href="#">Preview Image</a>
+					<label>Image (URL):</label>
+					<input class = 'url' type="url" name="image"/>
 				</div>
-				<div class = 'col-sm-12 col-md-12'>
+				<div name="size" class = 'col-sm-12 col-md-12'>
 					<label>Size:</label>
-					<select name="size" value="<%= Product.size%>">
+					<select name="size" form="newProduct" id="size">
 						<option value ="XS">XS</option>
 						<option value ="S">S</option>
 						<option value ="M">M</option>
@@ -27,30 +26,30 @@
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Price: $</label>
-					<input type="number" name="price" min="0" value="<%= Product.price%>"></input>
+					<input type="number" name="price" min="0"></input>
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Condition:</label>
-					<select name="size" value="<%= Product.condition%>">
+					<select name="condition" form="newProduct" id="condition">
 						<option value ="New">New</option>
 						<option value ="Used">Used</option>
 					</select>
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
 					<label>Description:</label><br />
-					<textarea name="description" rows="4" cols="50"><%= Product.description%>
+					<textarea name="description" type="text" rows="4" cols="50">
 					</textarea>
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
-					<label>Department:</label>
-					<select name="department" value="<%= Product.department%>">
+					<label>Category:</label>
+					<select name="category" form="newProduct" id="category">
 						<option value ="Tops">Tops</option>
 						<option value ="Bottoms">Bottoms</option>
 					</select>
 				</div>
 				<div class = 'col-sm-12 col-md-12'>
-					<label>Category:</label>
-					<select name="size" value="<%= Product.category%>">
+					<label>Department:</label>
+					<select name="department" form="newProduct" id="department">
 						<option value ="Mens">Mens</option>
 						<option value ="Womens">Womens</option>
 					</select>
