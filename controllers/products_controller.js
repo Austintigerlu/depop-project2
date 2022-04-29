@@ -67,18 +67,6 @@ router.get('/mensware/tops/:id/', async (req,res,next) => {
 	}
 })
 
-// Category: Mensware Sub: Tops/ID/EDIT Page
-router.get('/mensware/tops/:id/edit/', async (req,res,next) => {
-	try {
-		const insert_name_here = await db.insert_name_here.findById(req.params.id)
-		const context = { insert_name_here: insert_name_here }
-		return res.render('insert_name_here', context)
-	} catch (error) {
-		console.log(error)
-		req.error = error;
-		return next();
-	}
-})
 
 // Category: Mensware Sub: Bottoms Page
 router.get('/mensware/bottoms/', async (req,res,next) => {
@@ -125,7 +113,7 @@ router.get('/:id/edit/', async (req,res,next) => {
 	}
 })
 
-router.put('/mensware/:id', async (req, res, next)=>{
+router.put('/:id', async (req, res, next)=>{
     try {
         const Product = await db.Product.findByIdAndUpdate(req.params.id, req.body);
         return res.redirect(`/products`)
