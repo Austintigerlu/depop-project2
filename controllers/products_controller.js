@@ -19,6 +19,28 @@ router.get('/', async (req,res,next) => {
 	}
 })
 
+//  -- NEW WEBPAGES --  
+
+//New Clothing/Jewelry Page
+router.get('/new', (req,res) => {
+
+	res.render('./new.ejs')
+})
+
+router.post('/', async (req, res, next) => {
+	console.log(req.body)
+    try {
+        // console.log(`The req.body is ${req.body}`)
+		let create = req.body
+        const createdProduct = await db.Product.create(create);
+        console.log(`The created product is ${createdProduct}`)
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
 //  -- DISPLAY PAGES -- 
 
 // Category: Mensware Page
@@ -268,12 +290,6 @@ router.post('/', async (req, res, next) => {
 	}
 })
 
-//  -- NEW WEBPAGES --  
-
-//New Clothing/Jewelry Page
-router.get('/new', (req,res) => {
-	res.render('insert_name_here')
-})
 
 // -- DELETE ITEMS --
 router.delete('')
