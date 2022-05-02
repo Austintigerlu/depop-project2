@@ -1,60 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <%- include('../partials/head.ejs') %>
+</head>
 <body class="has-navbar-fixed-top">
     <%- include('../partials/nav.ejs') %>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-            <form action="/login" method="POST">
-                <div class="text-center mb-3">
-                    <p>Sign in with:</p>
-                    <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-facebook-f"></i>
-                      </button>
-              
-                      <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-google"></i>
-                      </button>
-              
-                      <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-twitter"></i>
-                      </button>
-              
-                      <button type="button" class="btn btn-link btn-floating mx-1">
-                        <i class="fab fa-github"></i>
-                      </button>
+    <div class="container">
+        <div class="row">
+            <div class = "col-sm-12 col-md-4 justify-content-end"></div>
+            <div class="col-sm-6 col-md-4 col-md-offset-4 justify-content-end">
+                <h1 class="text-center login-title">Sign In</h1>
+                <div class="account-wall">
+                    <img class="profile-img" src="data:image/jpeg;base64,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">
+                    <form action="/login" method="POST" class="form-signin">
+                        <input name="email" type="email" class="form-control" placeholder="Email" required autofocus>
+                        <input name="password" type="password" class="form-control" placeholder="******" required>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+                    </form>
+                    <a href="/login/register" class="text-center new-account">Register</a>
                 </div>
-                <p class="text-center">or:</p>
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="loginName">Email:</label>
-                    <input type="email" id="loginName" class="form-control" name="email"/>
-                </div>
-                <div class="form-outline mb-4">
-                    <input type="password" id="registerPassword" class="form-control" name="password"/>
-                    <label class="form-label" for="registerPassword">Password</label>
-                </div>
-                <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
-                      aria-describedby="registerCheckHelpText" />
-                    <label class="form-check-label" for="registerCheck">
-                      I have read and agree to the terms
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
-            </form>
+            </div>
         </div>
     </div>
-
-        <!-- <div class="form-outline mb-4">
-            <input id="email-input" type="email" name="email" class="input"/>
-            <label class="form-label" for="email-input">Email</label>
-        </div>
-        <div class="form-outline mb-4">
-            <input id="password-input" type="password" name="password" class="input"/>
-            <label class="form-label" for="password-input">Password</label>
-        </div>
-        <button class="button is-link btn-primary btn-block mb-4">Sign In</button>
-    -->
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>
