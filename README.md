@@ -38,6 +38,6 @@ Cart Page:
 ## Stretch Goals 
 - Unique CSS that would allow users to hover over product images and add to cart
 - API that allows users to create user accounts via Google/Facebook
-- Purchase features with a Credit Card
+- Purchase features with a credit card
 - Transition of products via scroll
 - Functional shopping cart that can be saved for later use
