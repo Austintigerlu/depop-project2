@@ -8,7 +8,6 @@ router.get('/', async (req,res,next) => {
 	try {
 		const Product = await db.Product.find({})
 		const context = { Product }
-		console.log(context)
 		return res.render('products/index.ejs', context)
 	} catch (error) {
 		console.log(error)
@@ -150,7 +149,6 @@ router.get('/womensware/bottoms', async (req,res,next) => {
 			department: 'Womens',
 		})
 		const context = { Product }
-		console.log(context)
 		return res.render('./products/womensware/bottoms/womenbottoms.ejs', context)
 	} catch (error) {
 		console.log(error)
@@ -159,23 +157,12 @@ router.get('/womensware/bottoms', async (req,res,next) => {
 	}
 })
 
-// router.get('/jewelry', async (req,res,next) => {
-// 	try {
-// 		const insert_name_here = await db.insert_name_here.find({})
-// 		// const context = { insert_name_here }
-// 		// return res.render('insert_name_here', context)
-// 	} catch (error) {
-// 		console.log(error)
-// 		req.error = error;
-// 		return next();
-// 	}
-// })
-
 // EDIT Page
 router.get('/:id/edit/', async (req,res,next) => {
 	try {
 		const Product = await db.Product.findById(req.params.id)
-		const context = { Product: Product }
+		const context = { 
+			Product: Product }
 		return res.render('edit', context)
 	} catch (error) {
 		console.log(error)
@@ -187,7 +174,7 @@ router.get('/:id/edit/', async (req,res,next) => {
 router.put('/:id', async (req, res, next)=>{
     try {
         const Product = await db.Product.findByIdAndUpdate(req.params.id, req.body);
-        return res.redirect(`/products`)
+        return res.redirect(`/products/${req.params.id}`)
     } catch (error) {
         console.log(error);
         req.error = error;
