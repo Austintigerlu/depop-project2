@@ -66,4 +66,4 @@ app.get('/', async (req,res, next) => {
 })
 
 // Create Server
-app.listen(PORT)
+app.listen(PORT || 3000)
