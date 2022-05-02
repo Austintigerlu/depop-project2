@@ -6,3 +6,4 @@ module.exports = {
     Review: require('./Review'),
     Cart: require('./Cart')
 }
+
