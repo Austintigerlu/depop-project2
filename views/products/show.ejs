@@ -17,22 +17,25 @@
                         <h1><%=Product.name%></h1>
                     </div>
                 </div>
+        <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="label label-primary">Condition: <%=Product.condition%></span>
-                        <!-- <span class="monospaced">No. <%=Product._id%></span> -->
+                        <h4 class="product-price">Price: $<%=Product.price%></h4>
                     </div>
                 </div>
+        <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="description">Description: <%=Product.description%></p>
+                        <span class="label label-primary"> Condition: <%=Product.condition%></span>
                     </div>
                 </div>
+        <hr>
                 <div class="row">
-                    <div class="col-md-12 bottom-rule">
-                        <h2 class="product-price">$<%=Product.price%></h2>
+                    <div class="col-md-12">
+                        <p class="description"> Description: <%=Product.description%></p>
                     </div>
                 </div>
+        <hr>
                 <% if (user) {%>
                 <div class="row">
                     <div class="col-md-12">
