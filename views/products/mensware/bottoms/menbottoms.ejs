@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="/subcats.css">
     <%- include('../../../partials/head.ejs') %>
-<body>
     <%- include('../../../partials/nav.ejs') %>
-    <h1>Men's Bottoms</h1>
+<body>
+    <h1 class = 'gfx-1'><img src="https://cdn.discordapp.com/attachments/955541749516890142/970716756085702656/unknown.png"></h1><br />
     <div class = 'directory-path'>
         <a href = '/'>Home</a> > <a href = '/products/mensware'>Mensware</a> > Bottoms
-    </div>
+    </div><br />
     <div class = 'container-fluid'>
         <div class="row justify-content-start flex-wrap">
         <% for(let i = 0; i < Product.length; i++ ) { %>
-                <div class = 'col-sm-12 col-lg-2'><%= Product[i].name%><br />
-                    <a href="/products/<%=Product[i]._id%>"><img class = 'img-thumbnail' src = '<%= Product[i].image %>'></a><br />
-                $<%= Product[i].price %></div>
+                <div class = 'col-sm-12 col-lg-2' id='plates'>
+                    <button class="btn btn-outline-dark" id="name-bor"><%= Product[i].name%></button><br />
+                    <a href="/products/<%=Product[i]._id%>"><img class = 'img-thumbnail' id='' src = '<%= Product[i].image %>'></a><br />
+                    <img class = 'stars' src = 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Star_rating_4.5_of_5.png' width='100' length='100'><br />
+                    <div class = 'bottom'>
+                        <button class="btn btn-outline-dark" id="price">$<%= Product[i].price %></button><button class = 'btn btn-dark '>Add to Cart</button>
+                    </div>
+                </div>
                 <div class = 'col-sm-12 col-lg-1'></div>
         <% } %>
         </div>

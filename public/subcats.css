@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+
+h1 {
+	margin-top: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+.gfx-1{
+	background-color: #281c1c;
+}
+
+.gfx-2{
+	background-color: #000000;
+}
+
+
+.directory-path {
+	margin-left: 2%;
+	font-family: 'Noto Serif', serif;
+}
+
+#plates {
+	font-family: 'Noto Serif', serif;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.bottom {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: stretch;
+}
+
+.stars {
+	margin: 5px;
+}
+
+#price {
+	border: 0px;
+}
+
+#name-bor{
+	border: 0px;
+}
