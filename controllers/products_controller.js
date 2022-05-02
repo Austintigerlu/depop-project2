@@ -160,10 +160,14 @@ router.get('/womensware/bottoms', async (req,res,next) => {
 // EDIT Page
 router.get('/:id/edit/', async (req,res,next) => {
 	try {
+		if (req.session.currentUser){
 		const Product = await db.Product.findById(req.params.id)
 		const context = { 
 			Product: Product }
 		return res.render('edit', context)
+		} else {
+			res.redirect('/login')
+		}
 	} catch (error) {
 		console.log(error)
 		req.error = error;
@@ -181,11 +185,16 @@ router.put('/:id', async (req, res, next)=>{
         return next();
     }
 })
+// req.session.currentUser
 // -- DELETE ITEMS -
 	router.delete('/:id', async (req,res, next) => {
 		try{
+			if (req.session.currentUser){
 			const deleteProduct = await db.Product.findByIdAndDelete(req.params.id)
 			res.redirect('/products')
+			} else {
+				res.redirect('/login')
+			}
 		} catch (error) {
 			console.log(error);
 			req.error = error;
