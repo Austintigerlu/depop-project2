@@ -175,7 +175,8 @@ router.get('/womensware/bottoms', async (req,res,next) => {
 router.get('/:id/edit/', async (req,res,next) => {
 	try {
 		const Product = await db.Product.findById(req.params.id)
-		const context = { Product: Product }
+		const context = { 
+			Product: Product }
 		return res.render('edit', context)
 	} catch (error) {
 		console.log(error)
@@ -187,7 +188,7 @@ router.get('/:id/edit/', async (req,res,next) => {
 router.put('/:id', async (req, res, next)=>{
     try {
         const Product = await db.Product.findByIdAndUpdate(req.params.id, req.body);
-        return res.redirect(`/products`)
+        return res.redirect(`/products/${req.params.id}`)
     } catch (error) {
         console.log(error);
         req.error = error;
