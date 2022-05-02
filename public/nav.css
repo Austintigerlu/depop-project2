@@ -1,5 +1,6 @@
 .dropdown:hover .dropdown-menu {
 	display: block;
+    background-color: rgb(237, 234, 234);
 }
 
 .navbar .dropdown-menu {
@@ -8,7 +9,7 @@
 }
 header{
     font-family: 'PT Serif', serif;
-    background-color: white;
+    background-color: rgb(237, 234, 234);
 	position: fixed;
 	top: 0;
 	width: 100%;
