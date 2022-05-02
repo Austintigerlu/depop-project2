@@ -13,17 +13,19 @@ A clothing marketplace that features the industry standard shopping features. A 
 - Different tools for customers to navigate and search for their needs with ease through navigation bars.
 
 ## Wireframes
+
+Home Page:
+![wf4](https://cdn.discordapp.com/attachments/968255239947956247/968500489681522709/Home_Page.png)
+
 Shopping Page:
 ![wf1](https://cdn.discordapp.com/attachments/968255239947956247/968500488804904980/Shopping_Page.png)
-
-Cart Page:
-![wf2](https://cdn.discordapp.com/attachments/968255239947956247/968500489010442320/Cart_Page.png)
 
 Product Page:
 ![wf3](https://cdn.discordapp.com/attachments/968255239947956247/968500489379516537/Product_Page.png)
 
-Home Page:
-![wf4](https://cdn.discordapp.com/attachments/968255239947956247/968500489681522709/Home_Page.png)
+Cart Page:
+![wf2](https://cdn.discordapp.com/attachments/968255239947956247/968500489010442320/Cart_Page.png)
+
 
 ## User Stories
 - Be able purchase with ease.
