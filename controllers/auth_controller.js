@@ -11,14 +11,12 @@ router.get('/', (req,res) => {
 router.post('/', async (req,res, next) => {
     try{
         const foundUser = await User.findOne({email: req.body.email});
-        console.log(foundUser)
         const passMatch = await bcrypt.compare(req.body.password, foundUser.password);
         if (!passMatch) return alert('Password or Username Invalid');
         req.session.currentUser = {
             id: foundUser._id,
             username: foundUser.username,
         };
-        console.log(req.session)
         return res.redirect('/')
     } catch(error){
         console.log(error)
