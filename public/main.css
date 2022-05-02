@@ -48,6 +48,10 @@ body{
 	padding: 5px;
 }
 
+.homeClothes:hover {
+	opacity: 50%;
+}
+
 #homeModel {
 	max-height: 600px; 
     max-width: 600px;
