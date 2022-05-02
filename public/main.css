@@ -1,5 +1,8 @@
 body{
-	background-color: bisque;
+	background-color: white;
+    font-family: 'PT Serif', serif;
+    padding-top: 150px;
+    padding-bottom: 50px;
 }
 
 .display-pics{
@@ -7,30 +10,9 @@ body{
 	width: 300px;
 }
 
-.dropdown:hover .dropdown-menu {
-	display: block;
-}
-
-.navbar .dropdown-menu {
-	transform: translateY(-5px);
-}
 
 .middle{
 	margin-top: 100px;
-}
-
-
-#index-header{
-	align-items: center;
-	background-color: antiquewhite;
-	position: relative;
-	display: block;
-	height: 600px;
-}
-
-.layout {
-	display: flex;
-	gap: 4px;
 }
 
 
@@ -47,13 +29,10 @@ body{
 
 
 footer {
-	position: relative;
+    background-color: white;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	height: 2.5rem;
   }
 
-  #homeModel {
-    max-height: 600px; 
-    max-width: 600px;
-}
