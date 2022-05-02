@@ -1,3 +1,8 @@
 #homeClothes:hover {
 	opacity: 50%;
 }
+
+#flexscr {
+	display: flex;
+	justify-content: space-evenly;
+}
