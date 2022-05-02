@@ -2,24 +2,23 @@
     <% if (user) { %>
         <div class = 'container-fluid'>
             <nav class = 'nav justify-content-center bg-light text-dark'>
-                <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = 'https://cdn-icons-png.flaticon.com/512/7216/7216150.png' height='30' width='30'></a></div>
+                <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = '../../public/images/icons8-market-64.png' height='30' width='30'></a></div>
                 <div class = 'col-md-3'><a href = '#' class = 'nav-item nav-link disabled' id='Title-top-nav'>Marketplace for Clothes</a></div>
                 <div class = 'col-md-1'><a href = '/products/items/<%=user.id%>' class = 'nav-item nav-link active' id='home-top-nav'><%=user.username%></a></div>
                 <div class = 'col-md-1'><a href = '/login/logout' class = 'nav-item nav-link active' id='login-top-nav'>Logout</a></div>
                 <div class = 'col-md-1'><a href = '/products/new' class = 'nav-item nav-link active' id='signup-top-nav'>New</a></div>
-                <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = 'https://cdn-icons.flaticon.com/png/512/2832/premium/2832495.png?token=exp=1651007708~hmac=9944edfc2c5ef400e64478dbe61fcb49' height='30' width='30' title='My Bag'></a></div>
+                <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = '../../images/icons8-buying-48.png' height='30' width='30'></a></div>
             </nav>
         </div>
     <%}%>
     <% if (!user) {%>
     <div class = 'container-fluid'>
         <nav class = 'nav justify-content-center bg-light text-dark'>
-            <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = 'https://cdn-icons-png.flaticon.com/512/7216/7216150.png' height='30' width='30'></a></div>
-            <div class = 'col-md-3'><a href = '#' class = 'nav-item nav-link disabled' id='Title-top-nav'>Marketplace for Clothes</a></div>
-            <div class = 'col-md-1'><a href = '/' class = 'nav-item nav-link active' id='home-top-nav'>Home</a></div>
+            <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = '../../public/images/icons8-market-64.png' height='30' width='30'></a></div>
+            <div class = 'col-md-4'><a href = '#' class = 'nav-item nav-link disabled' id='Title-top-nav'>Marketplace for Clothes</a></div>
             <div class = 'col-md-1'><a href = '/login' class = 'nav-item nav-link active' id='login-top-nav'>Login</a></div>
             <div class = 'col-md-1'><a href = '/login/register' class = 'nav-item nav-link active' id='signup-top-nav'>Register</a></div>
-            <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = 'https://cdn-icons.flaticon.com/png/512/2832/premium/2832495.png?token=exp=1651007708~hmac=9944edfc2c5ef400e64478dbe61fcb49' height='30' width='30' title='My Bag'></a></div>
+            <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = '../../images/icons8-buying-48.png' height='30' width='30'></a></div>
         </nav>
     </div>
     <%}%>
