@@ -1,24 +1,24 @@
 <header>
     <% if (user) { %>
         <div class = 'container-fluid'>
-            <nav class = 'nav justify-content-center bg-light text-dark'>
-                <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = '../../public/images/icons8-market-64.png' height='30' width='30'></a></div>
-                <div class = 'col-md-3'><a href = '#' class = 'nav-item nav-link disabled' id='Title-top-nav'>Marketplace for Clothes</a></div>
-                <div class = 'col-md-1'><a href = '/products/items/<%=user.id%>' class = 'nav-item nav-link active' id='home-top-nav'><%=user.username%></a></div>
+            <nav class = 'nav justify-content-center'>
+                <div class = 'col-md-2'><a href = '/' class = 'nav-item nav-link active' id='Title-top-nav'>Marketplace</a></div>
+                <div class="col-md-6" ><input type="text" id="search-top-nav" size="60" placeholder="Search.."></div>
+                <div class = 'col-md-1'><a href = '/products/items/<%=user.id%>' class = 'nav-item nav-link active' id='home-top-nav'>Profile</a></div>
                 <div class = 'col-md-1'><a href = '/login/logout' class = 'nav-item nav-link active' id='login-top-nav'>Logout</a></div>
                 <div class = 'col-md-1'><a href = '/products/new' class = 'nav-item nav-link active' id='signup-top-nav'>New</a></div>
-                <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = '../../images/icons8-buying-48.png' height='30' width='30'></a></div>
+                <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = '../../images/icons8-buying-48.png' height='40' width='40'></a></div>
             </nav>
         </div>
     <%}%>
     <% if (!user) {%>
     <div class = 'container-fluid'>
-        <nav class = 'nav justify-content-center bg-light text-dark'>
-            <div class = 'col-md-5'><a href = '/' class = 'nav-item nav-link active' id='logo-top-nav'><img src = '../../public/images/icons8-market-64.png' height='30' width='30'></a></div>
-            <div class = 'col-md-4'><a href = '#' class = 'nav-item nav-link disabled' id='Title-top-nav'>Marketplace for Clothes</a></div>
+        <nav class = 'nav justify-content-center'>
+            <div class = 'col-md-3'><a href = '/' class = 'nav-item nav-link active' id='Title-top-nav'>Marketplace</a></div>
+            <div class="col-md-6" ><input type="text" id="search-top-nav" size="60" placeholder="Search.."></div>
             <div class = 'col-md-1'><a href = '/login' class = 'nav-item nav-link active' id='login-top-nav'>Login</a></div>
             <div class = 'col-md-1'><a href = '/login/register' class = 'nav-item nav-link active' id='signup-top-nav'>Register</a></div>
-            <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = '../../images/icons8-buying-48.png' height='30' width='30'></a></div>
+            <div class = 'col-md-1'><a href = '#' class = 'nav-item nav-link active' id='bag-top-nav'><img src = '../../images/icons8-buying-48.png' height='40' width='40'></a></div>
         </nav>
     </div>
     <%}%>

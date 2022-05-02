@@ -1,0 +1,30 @@
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.navbar .dropdown-menu {
+	transform: translateY(-5px);
+    justify-content: left;
+}
+header{
+    font-family: 'PT Serif', serif;
+    background-color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+    z-index: 9999;
+    margin-bottom: 100px;
+}
+
+#Title-top-nav{
+    font-size: 30px;
+    color: black;
+}
+
+#search-top-nav{
+    float: center;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
