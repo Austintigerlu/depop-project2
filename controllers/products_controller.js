@@ -185,7 +185,7 @@ router.put('/:id', async (req, res, next)=>{
         return next();
     }
 })
-// req.session.currentUser
+
 // -- DELETE ITEMS -
 	router.delete('/:id', async (req,res, next) => {
 		try{

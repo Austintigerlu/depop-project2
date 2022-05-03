@@ -42,7 +42,7 @@ app.use(
 );
 
 app.use(function (req, res, next) {
-    res.locals.user = req.session.currentUser;
+    res.locals.user=req.session.currentUser;
     next();
 })
 
@@ -63,6 +63,6 @@ app.get('/', async (req,res, next) => {
         return next();
     }
 })
-
+ 
 // Create Server
 app.listen(PORT || 4000)
