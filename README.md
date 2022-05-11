@@ -33,10 +33,15 @@ Cart Page:
 - Multipurpose catalog.
 
 ## Website
+Home Page:
 <img width="1189" alt="Screen Shot 2022-05-11 at 3 29 39 PM" src="https://user-images.githubusercontent.com/101610362/167930521-0e9f5a00-7474-4113-9c01-b4959e3f1fac.png">
-<img width="1186" alt="Screen Shot 2022-05-11 at 3 29 11 PM" src="https://user-images.githubusercontent.com/101610362/167930575-a8ada29d-7432-48ef-9853-aaafd44f2c70.pn<img width="1019" alt="Screen Shot 2022-05-11 at 3 28 23 PM" src="https://user-images.githubusercontent.com/101610362/167930633-f429f5a1-23be-4f59-a8e7-058f3ef91c6b.png">
-g">
- ![Uploading Screen Shot 2022-05-11 at 3.28.23 PM.png…]()
+
+Login Page:
+<img width="1019" alt="Screen Shot 2022-05-11 at 3 28 23 PM" src="https://user-images.githubusercontent.com/101610362/167930852-40342a22-82b4-40d3-b8f2-96bb70cac217.png">
+
+Items Page:
+<img width="1186" alt="Screen Shot 2022-05-11 at 3 29 11 PM" src="https://user-images.githubusercontent.com/101610362/167930902-fd1d9712-893e-4e0f-bb70-9e21113b3264.png">
+
 
 ## ERD
 ![ERD](https://cdn.discordapp.com/attachments/968255770472890448/968575713584230500/ERD.png)
