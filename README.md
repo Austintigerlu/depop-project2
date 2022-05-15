@@ -5,6 +5,9 @@
 
 A clothing marketplace that features industry standard shopping features. A user comes to the site and decides what they want to purchase after thorough browsing of select jewelry, men's clothing, and women's clothing. The site includes interactive features that make it intuitive for the user to come in and purchase what they want, when they want with only a few clicks.
 
+## Website
+
+
 ## Planning
 - The reference that we've decided upon is [Depop](http://www.depop.com/)
 - Dictated that the framework for our database comes from mongoDB
